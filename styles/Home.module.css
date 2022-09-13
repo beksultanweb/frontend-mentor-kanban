@@ -9,8 +9,17 @@
 }
 .divider{
   /* background: #E4EBFA; */
-  height: 96px;
+  height: 60px;
   border: 1px solid #E4EBFA;
+}
+.main{
+  display: flex;
+  flex-direction: row;
+}
+.main_active{
+  display: flex;
+  flex-direction: row;
+  margin-left: 300px;
 }
 .header{
   display: flex;
@@ -21,7 +30,7 @@
   display: flex;
   align-items: center;
   gap: 32px;
-  margin-left: 95px;
+  margin-left: 96px;
 }
 .circle{
   border-radius: 50%;
@@ -62,6 +71,7 @@
   height: 15px;
 }
 .subtitle{
+  margin-top: 50px;
   color: #828FA3;
   font-weight: 700;
   display: flex;
@@ -74,7 +84,7 @@
   margin: 24px 0px 24px 24px;
 }
 .task_title{
-  color: #000112;
+  color: var(--text-primary);
   font-weight: 700;
   font-size: 15px;
 }
@@ -127,14 +137,14 @@
 }
 
 .nav {
-  top: 96px;
+  top: 60px;
   left: 0;
   position: fixed;
   /* z-index: 100; */
   height: 100vh; /* <--- set height to max */
   border-right: 1px solid #E4EBFA; /* <--- border right */
   white-space: nowrap;
-  background: #fff;
+  background: var(--background-menu);
 }
 .nav_menu {
   width: 0; /* <--- width to 0 */
@@ -150,7 +160,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  bottom: 128px;
+  bottom: 92px;
   width: 56px;
   height: 48px;
   border-radius: 0px 100px 100px 0px;
@@ -163,7 +173,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  bottom: 128px;
+  bottom: 92px;
   width: 276px;
   height: 48px;
   border-radius: 0px 100px 100px 0px;

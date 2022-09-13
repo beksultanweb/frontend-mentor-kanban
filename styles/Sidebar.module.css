@@ -1,0 +1,30 @@
+.mode{
+  -webkit-appearance: none;
+  visibility: hidden;
+  display: none;
+}
+.check{
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 20px;
+  background: #635FC7;
+  cursor: pointer;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: ease-in 0.5s;
+}
+.check::before{
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background: #fff;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+.mode:checked ~ .check::before{
+  transform: translateX(19px);
+}

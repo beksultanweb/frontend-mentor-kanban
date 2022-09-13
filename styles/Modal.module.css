@@ -1,0 +1,53 @@
+.modal{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modalcontent{
+    padding: 32px 32px 32px 32px;
+    width: 480px;
+    background-color: #fff;
+}
+.task_subtitle{
+    font-size: 13px;
+    font-weight: 500;
+}
+.subtask{
+    background: #F4F7FD;
+    border-radius: 4px;
+    display: flex;
+    gap: 16px;
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-bottom: 12px;
+    /* flex-direction: row; */
+    align-items: center;
+}
+.subtask_list{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.done_subtask{
+    font-weight: 700;
+    font-size: 12px;
+    
+    display: inline;
+    text-decoration-line: line-through;
+    color: #000112;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+}
+.undone_subtask{
+    
+    display: inline;
+    font-weight: 700;
+    font-size: 12px;
+    color: #000112;
+}
