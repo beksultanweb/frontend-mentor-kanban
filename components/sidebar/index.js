@@ -11,8 +11,8 @@ export default function Sidebar({switchTheme, data, sidebarOpened, setSelectedBo
   return (
     <div className={sidebarOpened ? styles.nav_menu_active : styles.nav_menu}>
       <div className={styles.subtitle}>ALL BOARDS ({data.boards?.length})</div>
-      {data.boards?.map((board) =><div key={board.name} onClick={() => setSelectedBoard(board.name)}><img src="/assets/icon-board.svg" alt="board" />{board.name}</div>)}
-      <div><img src="/assets/icon-board.svg" alt="board" />+ Create New Board</div>
+      {data.boards?.map((board) =><div key={board.name} onClick={() => setSelectedBoard(board.name)}><Image src="/assets/icon-board.svg" alt="board" />{board.name}</div>)}
+      <div><Image src="/assets/icon-board.svg" alt="board" />+ Create New Board</div>
       
       <label>
         <input className={styl.mode} type="checkbox"/>
