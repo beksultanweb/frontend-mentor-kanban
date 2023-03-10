@@ -91,7 +91,7 @@ export default function Home() {
       </Head>
       <header>
         <div className={sidebarOpened? styles.header_active:styles.header}>
-          <img className={styles.logo} src="/assets/logo-dark.svg" alt="logo" />
+          <Image className={styles.logo} src="/assets/logo-dark.svg" alt="logo" />
           <hr className={styles.divider}/>
           <div className={styles.title}>Product launch</div>
         </div>
@@ -118,7 +118,7 @@ export default function Home() {
           <div className={styles.subtitle}><div className={styles.todo_circle}></div>DOING ({todoCards.boards.filter((board) => board.name === selectedBoard)[0].columns.filter((col) => col.name === 'Doing')[0]?.tasks.length})</div>
           <div className={styles.content}>
             {todoCards.boards.filter((board) => board.name === selectedBoard)[0].columns.filter((col) => col.name === 'Doing')[0]?.tasks.map((task) => (
-            <div onClick={() => handleClicked(task.title)} className={styles.todo}>
+            <div key={task.title} onClick={() => handleClicked(task.title)} className={styles.todo}>
               <div className={styles.task_title}>{task.title}</div>
               <div className={styles.task_subtitle}>{task.subtasks.filter((subtask) => subtask.isCompleted === true).length} of {task.subtasks.length} subtasks</div>
             </div>
@@ -129,7 +129,7 @@ export default function Home() {
           <div className={styles.subtitle}><div className={styles.todo_circle}></div>DONE ({todoCards.boards.filter((board) => board.name === selectedBoard)[0].columns.filter((col) => col.name === 'Done')[0]?.tasks.length})</div>
           <div className={styles.content}>
             {todoCards.boards.filter((board) => board.name === selectedBoard)[0].columns.filter((col) => col.name === 'Done')[0]?.tasks.map((task) => (
-            <div onClick={() => handleClicked(task.title)} className={styles.todo}>
+            <div key={task.title} onClick={() => handleClicked(task.title)} className={styles.todo}>
               <div className={styles.task_title}>{task.title}</div>
               <div className={styles.task_subtitle}>{task.subtasks.filter((subtask) => subtask.isCompleted === true).length} of {task.subtasks.length} subtasks</div>
             </div>
@@ -139,7 +139,7 @@ export default function Home() {
         <div className={styles.newcolumn}>+ New Column</div>
         <div className={styles.nav}>
         <div className={sidebarOpened ? styles.toggle_active : styles.toggle} onClick={() => setSidebarOpened(!sidebarOpened)}>
-          {sidebarOpened ? <div><img src="/assets/icon-hide-sidebar.svg" alt="hide" />Hide Sidebar</div> : <div><img src="/assets/icon-show-sidebar.svg" alt="show" /></div>}
+          {sidebarOpened ? <div><Image src="/assets/icon-hide-sidebar.svg" alt="hide" />Hide Sidebar</div> : <div><Image src="/assets/icon-show-sidebar.svg" alt="show" /></div>}
         </div>
         <Sidebar data={todoCards} sidebarOpened={sidebarOpened} setSelectedBoard={setSelectedBoard}/>
         </div>
@@ -150,7 +150,7 @@ export default function Home() {
 
         <div className={styles.nav}>
         <div className={sidebarOpened ? styles.toggle_active : styles.toggle} onClick={() => setSidebarOpened(!sidebarOpened)}>
-          {sidebarOpened ? <div><img src="/assets/icon-hide-sidebar.svg" alt="hide" />Hide Sidebar</div> : <div><img src="/assets/icon-show-sidebar.svg" alt="show" /></div>}
+          {sidebarOpened ? <div><Image src="/assets/icon-hide-sidebar.svg" alt="hide" />Hide Sidebar</div> : <div><Image src="/assets/icon-show-sidebar.svg" alt="show" /></div>}
         </div>
         <Sidebar switchTheme={switchTheme} data={todoCards} sidebarOpened={sidebarOpened} setSelectedBoard={setSelectedBoard}/>
         </div>
