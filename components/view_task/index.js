@@ -12,13 +12,13 @@ export default function Viewtask({handleSubtaskCompleted, options, setModalOpene
     <div className={modal.modal} onClick={() => setModalOpened(false)}>
       <div className={modal.modalcontent} onClick={e => e.stopPropagation()}>
         {data.boards.filter((board) => board.name === selectedBoard)[0].columns.map((col) => col.tasks.filter((task) => task.title === selectedTitle).map((item) => (
-          <div>
+          <div key={item.title}>
             <div className={style.task_title}>{item.title}</div>
             <div className={modal.task_subtitle}>{item.description}</div>
             <div className={style.task_subtitle}>{item.subtasks.filter((subtask) => subtask.isCompleted === true).length} of {item.subtasks.length} subtasks</div>
             <div className={modal.subtask_list}>
             {item.subtasks.map((subtask) => (
-              <div>
+              <div key={subtask.title}>
                 {subtask.isCompleted && <div className={modal.subtask}><input type="checkbox" checked onClick={() => handleSubtaskCompleted(col.name, item.title, subtask.title)}/> <div className={modal.done_subtask}>{subtask.title}</div></div>}
                 {!subtask.isCompleted && <div className={modal.subtask}><input type="checkbox" onClick={() => handleSubtaskCompleted(col.name, item.title, subtask.title)}/> <div className={modal.undone_subtask}>{subtask.title}</div></div>}
               </div>
