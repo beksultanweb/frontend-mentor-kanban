@@ -39,7 +39,7 @@ export default function Addtask({options, stage, setStage, setModalAddTask, inpu
             <div>Subtasks</div>
             {inputList.map((x, i) => {
         return (
-          <div className="box">
+          <div className="box" key={x.firstName}>
             <input
               name="title"
               value={x.firstName}
@@ -58,7 +58,7 @@ export default function Addtask({options, stage, setStage, setModalAddTask, inpu
             
             <select name="" id="" value={stage} onChange={(e) => setStage(e.target.value)}>
             {options.map((option) =>
-                <option value={option.value}>{option.value}</option>
+                <option key={option.value} value={option.value}>{option.value}</option>
                 )}
             </select>
             <button onClick={handleAddTask}>Create Task</button>
